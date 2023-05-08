@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>Fast Car Wash Services | carwashservices.com</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen and (max-width: 1104px)" href="phone.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="car-wash.png" alt="carwashservices.com">
+        </div>
+        <ul>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="#services-container">Services</a></li>
+            <li class="item"><a href="#client-container">Client</a></li>
+            <li class="item"><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="h-primary-home">Welcome to CarWashServices</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, eius sit dolor harum maiores ex.</p>
+        <p>Lorem, ipsum dolor sit. Voluptate, dolor harum maiores ex.</p>
+        <button class="btn">Call Us</button>
+    </section>
+    <section id="services-container">
+        <h1 class="h-primary">Services Provided</h1>
+        <div id="services">
+            <div class="box1">
+                <img src="vanlogo.jpg" alt="">
+                <h2 class="h-primary-services2">Car Wash</h2>
+                <p>Lorem elit. Sequi repellat quos soluta similique iusto perspiciatis iure molestiae voluptatem
+                    Loremreprehenderit ratione ab beatae labore deleniti, officia ea voluptatem veritatis mollitia.</p>
+            </div>
+            <div class="box2">
+                <img src="tyre.jpg" alt="">
+                <h2 class="h-primary-services2">Home Service</h2>
+                <p>Lorem elit. Sequi repellat quos soluta similique iusto perspiciatis iure molestiae voluptatem
+                    Loremreprehenderit ratione ab beatae labore deleniti, officia ea voluptatem veritatis mollitia.</p>
+            </div>
+        </div>
+    </section>
+    <section id="client-container">
+        <div id="clients">
+            <h1 class="h-primary-clients">Our Clients</h1>
+            <div class="client-container-box">
+
+                <div class="client-box">
+                    <img src="john.jpg" alt="">
+                    <h3>JOHN LORY</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque saepe eum sequi eveniet
+                        libero
+                        consequatur. Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                </div>
+                <div class="client-box">
+                    <img src="emma.jpg" alt="">
+                    <h3>EMMA SONS</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque saepe eum sequi eveniet
+                        consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="client-box">
+                    <img src="jimmy.jpg" alt="">
+                    <h3>JIMMY TERRER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque saepe eum sequi eveniet
+                        consequatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h1 class="h-primary-contact">Contact Us</h1>
+       
+        <div id="contactbox">
+            <form name="contactform" method="POST" id="frmSubmit">
+
+                <label class="name" for="name">Name:</label>
+                <input type="text" name="Name" id="name" placeholder="Enter your name">
+
+                <label class="email" for="email">Email:</label>
+                <input type="text" name="Email" id="email" placeholder="Enter your email">
+
+                <label class="phone" for="phone">Phone:</label>
+                <input type="text" name="Phone" id="phone" placeholder="Enter your phone no.">
+
+                <label id="address" for="address">Address:</label>
+                <input type="text" name="Address" id="address" placeholder="Enter your address">
+               
+                <button type="submit" value="Submit" class="btn1" id="btnSubmit">Submit</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+    </section>
+    <footer>
+        <div class="copyright">
+            Copyright &copy; www.carwashservices.com. All rights reserved!
+        </div>
+    </footer>
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxAGv6AlAAZlF_mMaBntfZP53u2hRn-F_BhHwMhAuvSKhVUpd0VARfFX8a9QlEA7mua/exec'
+        const form = document.forms['contactform']
+        const success = document.getElementById('success');
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                success.innerHTML="Form submitted succesfully";
+            }) 
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+
+</html>
